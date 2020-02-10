@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poke Where Are You?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    body {
+        background-color: bisque;
+        color: darkcyan;
+        font-family: 'Segoe UI';
+        text-align: center;
+        vertical-align: middle;
+    }
+    form
+    {
+        text-align: center;
+        vertical-align: middle;
+    }
+    input{
+        border-radius: 4pt;
+        border-width: 2pt;
+        border-color: lightskyblue;    
+    }
+    button{
+        background-color: aliceblue;
+        color: darkolivegreen;
+        border: 2px;
+        border-color: lightsteelblue;
+        border-radius: 5px;
+    }
+        </style>
+
+</head>
+<body>
+    <br>
+        <img
+            src="http://localhost:5000/filetemp/pokemon-logo.png" width="400px" height="auto"
+        />
+        <br>
+        <form action="http://localhost:5000/result" method="POST">
+            <p>
+                <input name="pokemon" type="text" placeholder="Ketik nama pokemon"/>
+            </p>
+            <p> 
+                <input type="submit" value="Go!">
+            </p>
+        </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+          
+</body>
+</html>
