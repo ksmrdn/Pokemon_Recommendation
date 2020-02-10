@@ -22,11 +22,9 @@ def recommendation():
         if fav not in list(df_pokemon['Name']):
             return redirect('/notFound')
         ind_fav = df_pokemon[df_pokemon['Name']==fav].index.values[0]
-        # print(stat)
         
         recom_poke = sorted(list(enumerate(csScore[ind_fav])), key=lambda a: a[1], reverse=True) 
         fav_poke = df_pokemon.iloc[ind_fav][cols]
-        # print(poke_fav)
 
         poke_sembarang = []
         for i in recom_poke:
