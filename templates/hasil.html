@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Get to know Pokemon</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Pokemon</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
     body {
-        background-color: rgb(221, 232, 247);
-        color: darkslategray;
+        background-color: lightskyblue;
+        color: black;
+        font-family: 'Segoe UI';
         text-align: center;
         vertical-align: middle;
-        margin: auto;
-
     }
-    form {
+    form
+    {
         text-align: center;
-        vertical-align: middle        
-    } 
-    h1{
-        display: inline-block;
-      font-size: xx-large;
-      padding: 10px,5px,3px,3px;
-      font-weight: 700;
-      text-transform: uppercase  
+        vertical-align: middle;
     }
-    p{
-        font-size: medium;
-        word-spacing: 1em
+    input{
+        border-radius: 4pt;
+        border-width: 2pt;
+        border-color: black;    
     }
     button{
         background-color: aliceblue;
-        color: darkslategray;
+        color: darkolivegreen;
         border: 2px;
         border-color: lightsteelblue;
         border-radius: 5px;
-        } 
-    </style>
-    
-    
+    }
+        </style>
 </head>
 <body>
-    <br>
-        <h1 style="letter-spacing: 2pt" >{{nama_pokemon}}</h1>
-        <br>
-        <br>
-        <img
-            src="{{url_image}}" width="20%" height="auto"
-        />
+        <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">FAVORITE POKEMON &#10084</h1>
+        <center>
+        <table style="background-color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" cellspacing="10">
+        <tr><td style="text-align: center;" rowspan="2"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{myFav['#']}}.png"></td>
+            <td colspan="3" style="font-size: larger;"><b>{{myFav['Name']}}</b></td>
+        </tr>
+        <tr>
+            <td>&#10029 {{myFav['Type 1']}}</td>
+            <td>&#10030 {{myFav['Generation']}}</td>
+            <td>&#10031 {{myFav['Legendary']}}</td>          
+        </tr>
+        </table>
+        </center>
 
-        <p>
-                <i class='fas fa-address-card'></i> {{pokemon_id}}
-       
-                <i class='fas fa-text-height'></i> {{tinggi}}
-        
-                <i class='fas fa-weight'></i>  {{berat}}
-        </p>
-
-        <br>
-    <a href="/" target="_blank">
-        <button>
-            Back to Home
-        </button>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>   
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Recommendation Pokemon For YOU &#9759</h1>
+        {% for i in recommendation%}
+        <table style="background-color:white; display: inline-block;  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" cellspacing="10">
+        <tr>
+        <td style="text-align: center;" rowspan="2">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i['num']}}.png"></td>
+        <td colspan="3" style="font-size: larger;"><b>{{i['name']}}</b></td>
+        </tr>
+        <tr>
+        <td>&#10057 {{i['tipe']}}</td>
+        <td>&#9883 {{i['gen']}}</td>
+        <td>&#10061 {{i['legend']}}</td>
+        </tr>
+        </table>
+        {% endfor %}
+        <br><br>
+        <center>
+            <a href="/">
+                <form action = "http://127.0.0.1:4400">
+                <button type="button" class="btn btn-outline-dark">
+                    Back to Home
+                </button>
+                </form>
+        </center>
 </body>
 </html>
